@@ -1,0 +1,3 @@
+overwrite file
+use print() to a file!
+print a value to file: 3.14
