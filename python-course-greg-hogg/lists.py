@@ -23,6 +23,7 @@ j = [{f"2^{i}": 2**i} for i in range(5)] # [{'2^0': 1}, {'2^1': 2}, {'2^2': 4}, 
 print(a, b, c, d, e, f, g, h, i, j)
 
 print("\n Now let's do some ops")
+
 a.append('a') 
 a.append(1)
 l = len(a)
@@ -38,6 +39,8 @@ bb.reverse()
 
 d.sort()
 e.clear()
+
+print("\n May ways to iterate over lists...")
 
 for i in f:
     print(i)
