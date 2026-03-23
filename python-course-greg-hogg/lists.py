@@ -19,8 +19,9 @@ g = [{}] * 3  # repeated objects # [{}, {}, {}]
 h = [i * 2 for i in range(5)]  # [0, 2, 4, 6, 8] 
 i = [_.upper() for _ in "abc"] # ['A', 'B', 'C']
 j = [{f"2^{i}": 2**i} for i in range(5)] # [{'2^0': 1}, {'2^1': 2}, {'2^2': 4}, {'2^3': 8}, {'2^4': 16}]
+k = [x for x in range(30) if x % 3 == 0]
 
-print(a, b, c, d, e, f, g, h, i, j)
+print(a, b, c, d, e, f, g, h, i, j, k)
 
 print("\n Now let's do some ops")
 
@@ -53,5 +54,6 @@ for i in range(len(h)):
 
 for i, sqrt in enumerate([x**0.5 for x in h]):
     print(f"{i}:{sqrt}")
-    
+
+
 print(a, b, bb, c, d, e, f, g, h, i, j)
