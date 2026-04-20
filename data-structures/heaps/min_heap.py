@@ -39,25 +39,53 @@ class Heap:
         self.heap[1] = self.heap.pop()
         
         # percolate down
-        idx = 1
+        i = 1
         while True:
-            
-            left = 2 * idx + 1
-            right = 2 * idx + 2
-            min = idx
+            left = 2 * i
+            right = 2 * i + 1
 
-            if left < len(self.heap) and self.heap[left] < self.heap[min]:
+            min = i
+            
+            if left < len(self.heap) and self.heap[left] < self.heap[i]:
                 min = left
-            if right<len(self.heap) and self.heap[right] < self.heap[min]:
+            if right < len(self.heap) and self.heap[right] < self.heap[i]:
                 min = right
             
-            # exit if parent is min
-            if min == idx:
+            if min == i:
                 break
             
-            # swap min child with parent
-            self.heap[idx], self.heap[min] = self.heap[min], self.heap[idx]
-            idx = min
+            self.heap[min], self.heap[i] = self.heap[i], self.heap[min]
+            i = min
+            
         
         # return the min value
         return res
+
+    def __str__(self):
+        return f"{self.heap}"
+    
+h = Heap()
+h.push(3)
+h.push(2)
+h.push(6)
+h.push(4)
+h.push(1)
+print(h)        # [0, 1, 2, 6, 4, 3]
+
+print(h.pop())  # 1
+print(h)        # [0, 2, 3, 6, 4]
+
+print(h.pop())  # 2
+print(h)        #[0, 3, 4, 6]
+
+print(h.pop())  # 3
+print(h)        # [0, 4, 6]
+
+print(h.pop())  # 4
+print(h)        # [0, 6]
+
+print(h.pop())  # 6
+print(h)        # [0]
+
+print(h.pop())  # None
+print(h)        # [0]
