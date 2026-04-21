@@ -1,4 +1,4 @@
-class Heap:
+class MinHeap:
     def __init__(self):
         self.heap = [0]
 
@@ -64,7 +64,7 @@ class Heap:
     def __str__(self):
         return f"{self.heap}"
     
-h = Heap()
+h = MinHeap()
 h.push(3)
 h.push(2)
 h.push(6)
