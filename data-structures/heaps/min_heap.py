@@ -48,7 +48,7 @@ class MinHeap:
             
             if left < len(self.heap) and self.heap[left] < self.heap[i]:
                 min = left
-            if right < len(self.heap) and self.heap[right] < self.heap[i]:
+            if right < len(self.heap) and self.heap[right] < self.heap[left] and self.heap[right] < self.heap[i]:
                 min = right
             
             if min == i:
@@ -65,10 +65,10 @@ class MinHeap:
         return f"{self.heap}"
     
 h = MinHeap()
-h.push(3)
+h.push(4)
 h.push(2)
 h.push(6)
-h.push(4)
+h.push(3)
 h.push(1)
 print(h)        # [0, 1, 2, 6, 4, 3]
 
