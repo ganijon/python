@@ -1,0 +1,44 @@
+'''
+Leetcode 3464. Maximize the Distance Between Points on a Square
+
+You are given an integer side, representing the edge length of a square with corners at 
+(0, 0), (0, side), (side, 0), and (side, side) on a Cartesian plane.
+
+You are also given a positive integer k and a 2D integer array points, 
+where points[i] = [xi, yi] represents the coordinate of a point lying on the boundary of the square.
+
+You need to select k elements among points such that the minimum Manhattan distance between 
+any two points is maximized.
+
+Return the maximum possible minimum Manhattan distance between the selected k points.
+
+The Manhattan Distance between two cells (xi, yi) and (xj, yj) is |xi - xj| + |yi - yj|.
+'''
+
+def maxDistance(side, points, k):
+    """
+    :type side: int
+    :type points: List[List[int]]
+    :type k: int
+    :rtype: int
+    """
+
+    d = {}
+    for i in range(0, len(points)):
+        for j in range(i + 1, len(points)):
+            print(i, j)
+            key = (tuple(points[i]), tuple(points[j]))
+            val = abs(points[i][0] - points[j][0]) + abs(points[i][1] - points[j][1])     
+            d.update([(key, val)])
+
+    for item in d.items():
+        print(item)
+        
+    topk = sorted(d.items(), key=lambda i: i[1])[:k+1]
+    
+    print('--')
+    for item in topk:
+        print(item)
+        
+
+maxDistance(side=2, points=[[4,4],[3,4],[2,0],[4,3],[4,0]], k=4)
