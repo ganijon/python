@@ -83,3 +83,18 @@ for v in d7.values():
 print("\nItems:")
 for k, v in d7.items():
     print(f"{k}: {v}")
+
+print("Dictionary sorting")
+
+# sort by keys
+d9 = {"x": 9, "a": 1, "y": 8, "b": 2}
+print(d9)  # {'x': 9, 'a': 1, 'y': 8, 'b': 2}
+
+list9 = sorted(d9.items(), key=lambda x: x[0])
+print(list9)
+
+tpoint = (tuple([0, 0]), tuple([1, 1]))
+print(tpoint)
+
+d10 = {tpoint: 1}
+print(d10)
